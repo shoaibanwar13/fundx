@@ -1,0 +1,214 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Plan Checkout  {% endblock %}
+{% block content %}
+ 
+<script>
+document.getElementById('openPopupBtn').addEventListener('click', openPopup);
+
+function openPopup() {
+    document.getElementById('popup').style.display = 'flex';
+}
+
+function closePopup() {
+    document.getElementById('popup').style.display = 'none';
+}
+
+function uploadFile() {
+    // Add your file upload logic here
+    // You can use the FormData object to send the file to the server via AJAX
+    // For simplicity, we are just closing the popup in this example
+    closePopup();
+}
+
+
+</script>
+<div class="section l">
+  <div class="wrapper">
+    <div class="row">
+      <div class="semi-col left">
+        <div class="image-placeholder relative"><img
+            src="https://assets.website-files.com/649474f6271d3a9a1575e933/649474f6271d3a9a1575e9b2_placeholder-image.jpg"
+            loading="lazy" width="610"
+            sizes="(max-width: 479px) 92vw, (max-width: 767px) 93vw, (max-width: 991px) 46vw, 47vw" alt=""
+            srcset="https://assets.website-files.com/649474f6271d3a9a1575e933/649474f6271d3a9a1575e9b2_placeholder-image-p-500.jpg 500w, https://assets.website-files.com/649474f6271d3a9a1575e933/649474f6271d3a9a1575e9b2_placeholder-image-p-800.jpg 800w, https://assets.website-files.com/649474f6271d3a9a1575e933/649474f6271d3a9a1575e9b2_placeholder-image-p-1080.jpg 1080w, https://assets.website-files.com/649474f6271d3a9a1575e933/649474f6271d3a9a1575e9b2_placeholder-image.jpg 1220w" />
+          <div class="image-corner-cut right"><img
+              src="https://assets.website-files.com/649474f6271d3a9a1575e933/649474f6271d3a9a1575e9b3_image-corner.svg"
+              loading="lazy" alt="" /></div>
+        </div>
+      </div>
+<div data-w-id="916609f4-45f8-cbb8-6196-24b0688bd685"
+        style="-webkit-transform:translate3d(100px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(100px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(100px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(100px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0"
+        class="semi-col right">
+        <div class="inset-2xl">
+          <div class="g-stack-l">
+            <h1 class="overline tc-primary-600">{{detail.name}}</h1>
+            <h1 class="headline l">RS {{detail.amount}}</h1>
+            <p class="body-text-m tc-neutrals-500">Build and maintain relationships with investment through Us and Secure Payments. <br>All the benefits of Free, and:</p>
+            <ul role="list" class="list custom">
+              <li class="list-item stack-xs">
+                <div class="list-item custom stack-xs">
+                  <div class="inline-s tc-primary-700">
+                    <div class="asset w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        fill="currentColor" viewBox="0 0 24 24">
+                        <path fill-rule="evenodd"
+                          d="M9.001 18a1 1 0 0 1-.707-.293l-4.001-4.002a1 1 0 1 1 1.414-1.414L9 15.586l9.292-9.293a1 1 0 0 1 1.414 1.414l-9.999 10A1 1 0 0 1 9 18"
+                          clip-rule="evenodd" />
+                      </svg></div>
+                  </div>
+                  <div>{{detail.daily_return}}% Daily Earning</div>
+                </div>
+              </li>
+              <li class="list-item stack-xs">
+                <div class="list-item custom stack-xs">
+                  <div class="inline-s tc-primary-700">
+                    <div class="asset w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        fill="currentColor" viewBox="0 0 24 24">
+                        <path fill-rule="evenodd"
+                          d="M9.001 18a1 1 0 0 1-.707-.293l-4.001-4.002a1 1 0 1 1 1.414-1.414L9 15.586l9.292-9.293a1 1 0 0 1 1.414 1.414l-9.999 10A1 1 0 0 1 9 18"
+                          clip-rule="evenodd" />
+                      </svg></div>
+                  </div>
+                  <div>{{detail.monthly_return}}% Monthly Earning</div>
+                </div>
+              </li>
+              <li class="list-item stack-xs">
+                <div class="list-item custom stack-xs">
+                  <div class="inline-s tc-primary-700">
+                    <div class="asset w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        fill="currentColor" viewBox="0 0 24 24">
+                        <path fill-rule="evenodd"
+                          d="M9.001 18a1 1 0 0 1-.707-.293l-4.001-4.002a1 1 0 1 1 1.414-1.414L9 15.586l9.292-9.293a1 1 0 0 1 1.414 1.414l-9.999 10A1 1 0 0 1 9 18"
+                          clip-rule="evenodd" />
+                      </svg></div>
+                  </div>
+                  <div>360 Days Package Duration</div>
+                </div>
+              </li>
+              <li class="list-item stack-xs">
+                <div class="list-item custom">
+                  <div class="inline-s tc-primary-700">
+                    <div class="asset w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        fill="currentColor" viewBox="0 0 24 24">
+                        <path fill-rule="evenodd"
+                          d="M9.001 18a1 1 0 0 1-.707-.293l-4.001-4.002a1 1 0 1 1 1.414-1.414L9 15.586l9.292-9.293a1 1 0 0 1 1.414 1.414l-9.999 10A1 1 0 0 1 9 18"
+                          clip-rule="evenodd" />
+                      </svg></div>
+                  </div>
+                  <div>{{detail.referral_commission}}% Refferal Commission</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <a href="#" id="openPopupBtn"   class="button size-l w-button" class="open-form-link" data-toggle="modal" data-target="#purchaseModal" > CONFIRM INVESTMENT NOW</a>
+        </div>
+      </div>
+      </div>
+      </div>
+      </div>
+
+    
+ 
+
+     
+      <div id="popup" class="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-50 hidden" onclick="closePopup()">
+        <div class="bg-white p-8 rounded-md text-center relative flex flex-col items-center" onclick="event.stopPropagation()" style="width: 90%; max-width: 800px;">
+            <b><span class="absolute top-4 right-6 text-gray-700 cursor-pointer" onclick="closePopup()">&times;</span></b>
+            <h2 class="text-lg font-bold mb-4">Please Send The Exact Plan Amount First And Then Fill The Form</h2>
+    
+            <!-- Image Display in Flex -->
+            <div class="flex justify-center items-center mb-6">
+              <div class="text-center">
+                  <img src="{% static 'jazzcash.png' %}" alt="Image 1" class="w-32 h-32 object-cover rounded-md">
+                  <p class="text-gray-700 font-bold mt-2">Account Number: 030999999999</p>
+                  <p class="text-gray-700 font-bold mt-2">Account Title: Unknown</p>
+              </div>
+              <div class="text-center ml-4">
+                  <img src="{% static 'easypaisa.png' %}" alt="Image 2" class="w-32 h-32 object-cover rounded-md">
+                  <p class="text-gray-700 font-bold mt-2">Account Number: 030999999999</p>
+                  <p class="text-gray-700 font-bold mt-2">Account Title: Unknown User no.</p>
+              </div>
+          </div>
+    
+            <form id="fileUploadForm" enctype="multipart/form-data" class="w-full" action="/purchased_plan/" method="post">
+              {% csrf_token %}
+              <div class="mb-4">
+                <label for="beautifulInput1" class="block text-gray-700 font-bold mb-2">Plan Name </label>
+                <input type="text" id="beautifulInput1" class="w-full bg-white text-gray-700 border rounded py-2 px-3 focus:outline-none focus:border-blue-500" placeholder="Beautiful Input 1" readonly value="{{detail.name}}" name="pname">
+            </div>
+              <div class="mb-4">
+                <label for="paymentMethod" class="block text-gray-700 font-bold mb-2"> Select Payment Method</label>
+                <select id="paymentMethod" name="pmethod" class="w-full bg-white text-gray-700 border rounded py-2 px-3 focus:outline-none focus:border-blue-500">
+                  <option value="">Payment Meyhod</option>
+                  <option value="Eassy Paisa">Eassy Paisa</option>
+                    <option value="JazzCash">JazzCash</option>
+                     
+                </select>
+            </div>
+
+            <div class="mb-4">
+              <label for="beautifulInput1" class="block text-gray-700 font-bold mb-2">Transaction ID</label>
+              <input type="text" id="beautifulInput1" class="w-full bg-white text-gray-700 border rounded py-2 px-3 focus:outline-none focus:border-blue-500" placeholder="Transaction ID" name="trxid">
+          </div>
+             
+    
+                <div class="mb-4">
+                    <label for="fileInput" class="block text-gray-700 font-bold mb-2">Upload Screenshot</label>
+                    <div class="relative rounded-md overflow-hidden bg-black p-4">
+                        <input type="file" id="fileInput" name="sshort" class="absolute top-0 left-0 w-full h-full opacity-0 cursor-pointer" accept="image/*" style="background-color: black; color: white;" onchange="displayFileName()"/>
+                        <span id="fileName" class="ml-2 text-white">Upload Your Payment Slip</span>
+                    </div>
+                </div>
+                <div class="hidden">
+                  <label for="hiddenInput1">Daily Return</label>
+                  <input type="hidden" id="hiddenInput1" placeholder="Hidden Input 1" value="{{detail.daily_return}}" name="daily">
+              </div>
+              <div class="hidden">
+                <label for="hiddenInput1">Pending</label>
+                <input type="hidden" id="hiddenInput1" placeholder="Hidden Input 1" value="{{detail.amount}}" name="pending">
+            </div>
+    
+                
+    
+                <!-- Submit Button -->
+                <button type="submit" class="bg-purple-500 text-white px-4 py-2 rounded focus:outline-none">Purchase Plan</button>
+            </form>
+        </div>
+    </div>
+    
+    <script>
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+    
+        function displayFileName() {
+            const fileInput = document.getElementById('fileInput');
+            const fileNameSpan = document.getElementById('fileName');
+            if (fileInput.files.length > 0) {
+                fileNameSpan.textContent = fileInput.files[0].name;
+            } else {
+                fileNameSpan.textContent = 'No file chosen';
+            }
+        }
+    </script>
+    
+<script>
+  document.getElementById('openPopupBtn').addEventListener('click', openPopup);
+
+function openPopup() {
+    document.getElementById('popup').style.display = 'flex';
+}
+
+function closePopup() {
+    document.getElementById('popup').style.display = 'none';
+}
+
+function uploadFile() {
+    // Add your file upload logic here
+    // You can use the FormData object to send the file to the server via AJAX
+    // For simplicity, we are just closing the popup in this example
+    closePopup();
+}
+</script>
+{% endblock %}

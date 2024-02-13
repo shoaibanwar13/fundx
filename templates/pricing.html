@@ -1,0 +1,37 @@
+{% extends 'head.html' %}
+{% load static %}
+{% block title %} Our Plans {% endblock %}
+{% block content %}
+<div class="container-fluid py-4">
+  <div class="row">
+    <div class="col-xl-12 col-sm-6 mb-xl-0 mb-4">
+      <div class="pricing-area">
+        <div class="container">
+          <div class="row">
+           {% for plan in plans %}  
+               
+            <div class="col-md-4 col-sm-6 col-xs-12">
+              <div class="single-price">
+                <div class="deal-top">
+                  <h3>{{plan.name}}</h3>
+                  <h4>{{plan.amount}}<span class="sup">PKR</span> </h4> 
+                </div>
+                <div class="deal-bottom">
+                  <ul class="deal-item">
+                    <li>Daily Return   <span style="float:right">PKR {{plan.daily_return}}</span> </li>
+                    <li>Monthly Return <span style="float:right">PKR {{plan.monthly_return}}</span> </li>
+                    <li>Refferal Commission <span style="float:right">{{plan.referral_commission}}%</span> </li>
+                    
+                  </ul>
+                  <div class="btn-area">
+                    <a href="{% url 'plandetail' plan.id %}">Buy Now</a>       
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {% endfor %}
+            
+
+ 
+{% endblock %}

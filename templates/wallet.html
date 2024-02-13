@@ -1,0 +1,179 @@
+{% extends 'Dashboards.html'%}
+{% block content %}
+<div class="sections-wrapper">
+    <div class="wallets-wrapper">
+        <div class="container">
+            <div class="wallets-balance-chart-wrapper">
+                <div class="wallets-balance-wrapper">
+                    <div class="wallets-balance-text-wrapper">
+                        
+                        <div class="wallets-balance-text-block">Total Balance</div>
+                       
+                        <h2 class="wallets-balance-code"> RS {{total_payout}} </h2> 
+                    </div>
+                    <div class="wallets-balance-details-wrapper">
+                        <div class="wallets-balance-details-singel mr15">
+                            <div class="wallets-balance-details-text-block">Total Withdraw</div>
+                            <div class="wallets-balance-details-price"> PKR {{ total_withdraw}}  </div>
+                             
+                        </div>
+                        <div class="wallets-balance-details-singel">
+                            <div class="wallets-balance-details-text-block">Pending Withdraw</div>
+                            <div class="wallets-balance-details-price">    {% if pending_total %}
+                                PKR {{pending_total}}
+                                {% else %}
+                                PKR 00
+                                {% endif %}</div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="wallets-chart-wrapper">
+                    <div class="balance-categorys-top-content">
+                        <div class="balance-categorys">
+                             
+                            <div class="balance-category-singel ml20">
+                                <div class="balance-categorys-dote two"></div>
+                                <div class="balance-category-text">Daily Profit Release Every Day At 12AM</div>
+                            </div>
+                        </div> 
+                       <div class="balance-categorys-button-wrapper"> 
+                        {% if userbalace %}
+                        <h6 style="color: aqua;"><b>You Can't Withdraw Money. Balance is 0</b></h6>
+                        {% else %}
+                        <a
+                                data-w-id="2b8c7772-1480-0876-d7ce-a0cd968eaf52" href="#"
+                                class="balance-categorys-button withdraw w-button"   >Withdraw</a> {% endif %}</div> 
+                    </div>
+                    <div class="balance-crat-image-wrapper"><img
+                            src="https://assets.website-files.com/632e9fa0dfa1117a99e55716/633303115a5a6c364c9a784a_Wallets%20Balance%20Chart.svg"
+                            loading="lazy" alt="" class="balance-chart-image" /></div>
+                </div>
+            </div>
+             
+        </div>
+    </div>
+    {% for message in messages %}
+    <div class="w-form-done">
+        <div>{{message}}</div>
+    </div>
+    {% endfor %}
+</div>
+<div class="sections-wrapper">
+    <div class="wallets-wrapper">
+        <div class="container">
+            <div class="wallets-balance-chart-wrapper">
+                <div class="wallets-balance-wrapper">
+                    <div class="wallets-balance-text-wrapper">
+                        <div class="wallets-balance-text-block">Total Deposit</div>
+                      {% if total %}
+                        <h2 class="wallets-balance-code">PKR {{total}}</h2>
+                        {% else %}
+                        <h2 class="wallets-balance-code">PKR 00</h2>
+                        {%endif%}
+                    </div>
+                    <div class="wallets-balance-details-wrapper">
+                        <div class="wallets-balance-details-singel mr15">
+                            <div class="wallets-balance-details-text-block">Pending Deposit</div>
+                            <div class="wallets-balance-details-price"> {% if pending_total %}
+                                PKR {{pending_total}}
+                                {% else %}
+                                PKR 00
+                                {% endif %}</div>
+                             
+                        </div>
+                        <div class="wallets-balance-details-singel">
+                            <div class="wallets-balance-details-text-block">Reffral Commission</div>
+                            <div class="wallets-balance-details-price"> PKR {{comtotal}}  </div>
+                             
+                        </div>
+                    </div>
+                </div>
+                <div class="wallets-chart-wrapper">
+                    <div class="balance-categorys-top-content">
+                        <div class="balance-categorys">
+                            <div class="balance-category-singel">
+                                 <div class="balance-categorys-dote two"></div>
+                                {% if has_purchase_plans %}
+                                <div class="balance-category-text"> Account Activitivated </div>
+                            </div>
+                            <div class="balance-category-singel ml20">
+                                {% else %}
+                                <div class="balance-categorys-dote"></div>
+                                
+                                <div class="balance-category-text">Please Purchase Plan Click On Deposit</div>{% endif %}
+                            </div>
+                        </div>
+                        <div class="balance-categorys-button-wrapper"> <a
+                                data-w-id="2ddbe32e-1013-eb28-109f-80fa3ce4a544" href="/pricing/"
+                                class="balance-categorys-button deposite w-button">Deposite</a></div>
+                    </div>
+                    <div class="balance-crat-image-wrapper"><img
+                            src="https://assets.website-files.com/632e9fa0dfa1117a99e55716/633303115a5a6c364c9a784a_Wallets%20Balance%20Chart.svg"
+                            loading="lazy" alt="" class="balance-chart-image" /></div>
+                </div>
+            </div>
+             
+        </div>
+    </div>
+     
+</div>
+<div style="display:none" class="wallets-pop-up">
+    <div class="wallets-singel-wrapper">
+        <div style="-webkit-transform:translate3d(0, 30px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 30px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 30px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 30px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
+            class="wallets-balance-pop one">
+            <div class="wallets-balance-pop-top-content">
+                <div class="wallets-balance-pop-details"> 
+                    <div class="wallets-balance-pop-details-name-info">
+                        <h1 class="wallets-balance-pop-details-name">Withdrawl Money</h1>
+                         
+                    </div>
+                    <div data-w-id="3ea67f2b-e045-2095-5e91-8f613b65953b" class="clouse-button-wrapper"><img
+                            src="https://assets.website-files.com/632e9fa0dfa1117a99e55716/633842fa1badd9ed46cd1f10_Clouse%20Img.svg"
+                            loading="lazy" alt="" class="clouse-button-image" /></div>
+                </div>
+                <div class="wallets-balance-form-wrapper">
+                    <div class="wallets-balance-form-block w-form">
+                        <form id="email-form" name="email-form" data-name="Email Form" action="{% url 'withdraw' %}" method="post"
+                            class="wallets-balance-form">
+                            {% csrf_token %}
+                            <select name="pmethod" id="hall" value="" style="background-color: rgb(36, 35, 53); color:white; width: 220px; height: 40px; border-radius: 7px;" >
+                                <option value="">Please Select Payment Method</option>
+                                <option value="EassyPaisa">EassyPaisa</option>
+                                <option value="JazzCash">JazzCash</option>
+                                 
+                              </select>
+                            <div class="wallets-balance-singel"><br><label for="email"
+                                    class="wallets-balance-form-field-label">Account Number</label><input type="number"
+                                    class="wallets-balance-form-input w-input" maxlength="256" name="account_no"
+                                    data-name="Email" placeholder="Wallet Account Number" id="email"
+                                    required="" /></div>
+                            
+                            <div class="wallets-balance-singel"><label for="email-2"
+                                    class="wallets-balance-form-field-label">Account Title</label><input
+                                    type="text" class="wallets-balance-form-input w-input" maxlength="256"
+                                    name="account_title" data-name="Email 2" placeholder="Wallet Account Title" id="email-2"
+                                    required="" />
+                               
+                            </div>
+                            <div class="wallets-balance-singel"><label for="email-3"
+                                    class="wallets-balance-form-field-label">Amount to widthdraw</label><input
+                                    type="number" class="wallets-balance-form-input w-input" maxlength="256"
+                                    name="amount" data-name="Email 3" placeholder=" Enter Amount to widthdraw" id="email-3"
+                                    required="" /></div>
+                                    <div class="wallets-balance-limit">Your Total Balace RS {{payout1}}.</div>
+                            <div class="wallets-balance-singel"><br><label for="email-3"
+                                    class="wallets-balance-form-field-label">$1,000,000.00 daily withdrawal limit</label> </div>
+                            <input type="submit" value="Widthdraw" data-wait="Please wait..."
+                                class="widthdraw-submit-button w-button" />
+                        </form>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+ 
+{% endblock %}

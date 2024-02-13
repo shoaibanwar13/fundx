@@ -1,0 +1,236 @@
+{% extends 'Dashboards.html'%}
+{% block content %}
+
+        <div class="sections-wrapper">
+            <div class="exchange-wrapper">
+                <div class="container">
+                    <div class="exchange-sngel-wrapper">
+                        <div class="w-layout-grid exchange-card-grid">
+                            <div id="w-node-fe23cacf-9998-c7ba-fea9-bcae08058672-fcbd0fcf"
+                                class="exchange-card-singel-wrapper">
+                                <div class="exchange-card-image-text-wrapper"><img
+                                        src="https://assets.website-files.com/632e9fa0dfa1117a99e55716/633159602ffcde4bc85c5fb0_Exchange%20Card%20Image.png"
+                                        loading="lazy" alt="" class="exchange-card-image" />
+                                    <div class="exchange-card-text-wrapper">
+                                        <h2 class="exchange-card-name"> Balance 
+                                          
+                                        </h2>
+                                        <div class="exchange-card-info">PKR {{total_payout}}</div>
+                                    </div>
+                                </div>
+                                <div class="exchange-card-boder"></div>
+                            </div>
+                            <div id="w-node-b02e7eee-e072-cd1d-ea60-d011ef317832-fcbd0fcf"
+                                class="exchange-card-singel-wrapper">
+                                <div class="exchange-card-text-wrapper">
+                                    <h2 class="exchange-card-name">Total Deposit </h2>
+                                    <div class="exchange-card-info">  {% if total %}
+                                        {{total}}
+                                    {%else%}
+                                    00
+                                    {%endif%}</div>
+                                </div>
+                                <div class="exchange-card-boder"></div>
+                            </div>
+                            <div id="w-node-_0c5de506-5b8d-f5e2-22e6-6721e0c44cc2-fcbd0fcf"
+                                class="exchange-card-singel-wrapper">
+                                <div class="exchange-card-text-wrapper">
+                                    <h2 class="exchange-card-name">Commession</h2>
+                                    <div class="exchange-card-info">{{comtotal}}</div>
+                                </div>
+                                <div class="exchange-card-boder"></div>
+                            </div>
+                             
+                            <div id="w-node-_86edd98d-317a-6529-1e1f-cf4df71ffd81-fcbd0fcf"
+                                class="exchange-card-singel-wrapper">
+                                <div class="card-height-wrapper">
+                                    <div class="exchange-card-text-wrapper">
+                                        <h2 class="exchange-card-name">Pending Withdrawl</h2>
+                                        <div class="exchange-card-detais"><img
+                                                src="https://assets.website-files.com/632e9fa0dfa1117a99e55716/63316ceb2484312d4ac775a9_Exchange%20Card%20Info%20Img2.png"
+                                                loading="lazy" alt="" class="exchange-card-info-img" />
+                                            <div class="exchange-card-info low">{% if pending_total %}
+                                                {{pending_total}}
+                                               {% else %}
+                                                 0
+                                               {% endif %}</div>
+                                        </div>
+                                    </div>
+                                    <div class="exchange-card-height-img-wrap"><img
+                                            src="https://assets.website-files.com/632e9fa0dfa1117a99e55716/63316d826aae60bf2f88abf8_Exchange%20Card%20Height%20Img%202.png"
+                                            loading="lazy" alt="" class="exchange-card-height-img" /></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="order-book-chrat-wrapper">
+                        <div class="order-book-wrapper">
+                            <div class="order-book-title-wrap">
+                                <div class="dashboard-chart-title-wrap">
+                                    <h2 class="dashboard-chart-title">Withdrawl History </h2>
+                                </div>
+                            </div>
+                            <div class="order-book-header">
+                                <div class="w-layout-grid order-book-header-grid">
+                                    <div id="w-node-_5d8023f0-856d-2e77-6dee-7dd73dbf4477-fcbd0fcf"
+                                        class="order-book-header-title-wrapper">
+                                        <div class="order-book-header-title">Account </div>
+                                    </div>
+                                    <div id="w-node-_6995ebcc-6fca-0eb4-c608-28f9ff133375-fcbd0fcf"
+                                        class="order-book-header-title-wrapper">
+                                        <div class="order-book-header-title">Amount </div>
+                                    </div>
+                                    <div id="w-node-f8998297-6022-c6ab-d104-1737f367ec34-fcbd0fcf"
+                                        class="order-book-header-title-wrapper">
+                                        <div class="order-book-header-title">Status </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="order-book-content">
+                                <div class="order-book-singel-wrapper">
+                                   
+                                    <div class="order-book-grid-wrapper">
+                                        {% for depo in withdraw %}
+                                        <div class="w-layout-grid order-book-grid">
+                                            <div id="w-node-_2654d38a-ff28-852c-0b02-6cb8b4b4dc3e-fcbd0fcf"
+                                                class="order-book-singel">
+                                                <div class="order-book-text-block">{{depo.account_no}}</div>
+                                            </div>
+                                            <div id="w-node-_56a6f069-2a68-72f9-a46c-805b425d62f0-fcbd0fcf"
+                                                class="order-book-singel">
+                                                <div class="order-book-text-block">{{depo.amount}}</div>
+                                            </div>
+                                            
+                                            <div id="w-node-acd172a6-932a-a8f6-a3c4-fceb9304a8b2-fcbd0fcf"
+                                                class="order-book-singel">
+                                                <div class="order-book-text-block">{{depo.status}}</div>
+                                            </div>
+                                            
+                                        </div>
+                                        <hr>
+                                        {% endfor%}
+                                        
+                                    </div>
+                                   
+                                </div>
+                            </div>
+                             
+                        </div>
+                        <div class="exchange-chart-wrapper">
+                            <div data-current="Tab 1" data-easing="ease" data-duration-in="300" data-duration-out="100"
+                                class="exchange-chart-tab w-tabs">
+                                <div class="exchange-chart-tab-menu w-tab-menu"><a data-w-tab="Tab 1"
+                                        class="exchange-chart-tab-link w-inline-block w-tab-link w--current">
+                                        <div>Price Chart</div>
+                                    </a><a data-w-tab="Tab 2" class="exchange-chart-tab-link w-inline-block w-tab-link">
+                                        <div>Deep Chart</div>
+                                    </a></div>
+                                <div class="exchange-tabs-content w-tab-content">
+                                    <div data-w-tab="Tab 1" class="exchange-chart-tab-content w-tab-pane w--tab-active">
+                                        <div class="exchange-chart-tab-image-wrapper"><img loading="lazy"
+                                                src="https://assets.website-files.com/632e9fa0dfa1117a99e55716/6331bc7cdf93c908ec81b181_Exchange%20Chart%20Tab%20Image%20One.svg"
+                                                alt="" class="exchange-chart-tab-image" /></div>
+                                    </div>
+                                    <div data-w-tab="Tab 2" class="exchange-chart-tab-content w-tab-pane">
+                                        <div class="exchange-chart-tab-image-wrapper"><img loading="lazy"
+                                                src="https://assets.website-files.com/632e9fa0dfa1117a99e55716/6331bb424796d5c8fa8e0752_Exchange%20Chart%20Tab%20Image%20Two.svg"
+                                                alt="" class="exchange-chart-tab-image" /></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="exchange-chart-tab-top-text-wrapper">
+                                <div class="exchange-chart-text-block mr20">Our Market </div>
+                                <div class="exchange-chart-text-block">Indicator</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="order-book-chrat-wrapper">
+                        <div class="order-book-wrapper">
+                            <div class="order-book-title-wrap">
+                                
+                                <div class="dashboard-chart-title-wrap">
+                                    <h2 class="dashboard-chart-title">Deposit History</h2>
+                                </div>
+                            </div>
+                            <div class="order-book-header">
+                                <div class="w-layout-grid order-book-header-grid">
+                                    
+                                    <div id="w-node-_5d8023f0-856d-2e77-6dee-7dd73dbf4477-fcbd0fcf"
+                                        class="order-book-header-title-wrapper">
+                                        
+                                        <div class="order-book-header-title">Plan Name</div>
+                                    </div>
+                                    <div id="w-node-_6995ebcc-6fca-0eb4-c608-28f9ff133375-fcbd0fcf"
+                                        class="order-book-header-title-wrapper">
+                                        <div class="order-book-header-title">Amount </div>
+                                    </div>
+                                    <div id="w-node-f8998297-6022-c6ab-d104-1737f367ec34-fcbd0fcf"
+                                        class="order-book-header-title-wrapper">
+                                        <div class="order-book-header-title">Status</div>
+                                    </div>
+                                </div>
+                                <hr>
+                                    
+                            </div>
+                            <div class="order-book-content">
+                                <div class="order-book-singel-wrapper">
+                                    <div class="order-book-grid-wrapper">
+                                        {% for depo in user_deposit%}
+                                        <div class="w-layout-grid order-book-grid">
+                                            <div id="w-node-_2654d38a-ff28-852c-0b02-6cb8b4b4dc3e-fcbd0fcf"
+                                                class="order-book-singel">
+                                                <div class="order-book-text-block">{{depo.plan_name}}</div>
+                                            </div>
+                                            <div id="w-node-_56a6f069-2a68-72f9-a46c-805b425d62f0-fcbd0fcf"
+                                                class="order-book-singel">
+                                                <div class="order-book-text-block">{{depo.amount}}</div>
+                                            </div>
+                                            <div id="w-node-acd172a6-932a-a8f6-a3c4-fceb9304a8b2-fcbd0fcf"
+                                                class="order-book-singel">
+                                                <div class="order-book-text-block">{{depo.status}}</div>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        {% endfor %}
+                                    </div>
+                                   
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="exchange-chart-wrapper">
+                            <div data-current="Tab 1" data-easing="ease" data-duration-in="300" data-duration-out="100"
+                                class="exchange-chart-tab w-tabs">
+                                <div class="exchange-chart-tab-menu w-tab-menu"><a data-w-tab="Tab 1"
+                                        class="exchange-chart-tab-link w-inline-block w-tab-link w--current">
+                                        <div>Price Chart</div>
+                                    </a><a data-w-tab="Tab 2" class="exchange-chart-tab-link w-inline-block w-tab-link">
+                                        <div>Deep Chart</div>
+                                    </a></div>
+                                <div class="exchange-tabs-content w-tab-content">
+                                    <div data-w-tab="Tab 1" class="exchange-chart-tab-content w-tab-pane w--tab-active">
+                                        <div class="exchange-chart-tab-image-wrapper"><img loading="lazy"
+                                                src="https://assets.website-files.com/632e9fa0dfa1117a99e55716/6331bc7cdf93c908ec81b181_Exchange%20Chart%20Tab%20Image%20One.svg"
+                                                alt="" class="exchange-chart-tab-image" /></div>
+                                    </div>
+                                    <div data-w-tab="Tab 2" class="exchange-chart-tab-content w-tab-pane">
+                                        <div class="exchange-chart-tab-image-wrapper"><img loading="lazy"
+                                                src="https://assets.website-files.com/632e9fa0dfa1117a99e55716/6331bb424796d5c8fa8e0752_Exchange%20Chart%20Tab%20Image%20Two.svg"
+                                                alt="" class="exchange-chart-tab-image" /></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="exchange-chart-tab-top-text-wrapper">
+                                <div class="exchange-chart-text-block mr20">Our Market </div>
+                                <div class="exchange-chart-text-block">Indicator</div>
+                            </div>
+                        </div>
+                    </div>
+                     
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+{%endblock%}

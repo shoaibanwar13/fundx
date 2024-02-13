@@ -1,0 +1,103 @@
+{% extends 'Dashboards.html'%}
+{% block content %}
+    
+           
+        
+        <div class="sections-wrapper">
+            <div class="settings-singel-wrapper">
+                <div class="container">
+                    <div class="settings-box">
+                        <div class="settings-top-content">
+                            <div class="settings-bg">
+                                <div class="settings-edit-button-wrapper"><a style="text-decoration: none;" href="{% url 'password_reset' %}"
+                                        class="edit-button w-inline-block">
+                                        <div>Password</div><img
+                                            src="https://assets.website-files.com/632e9fa0dfa1117a99e55716/6337cf9a7b04fd8061c3e64c_Edit%20Icon%20Img.svg"
+                                            loading="lazy" alt="" class="edit-icon-img" />
+                                    </a></div>
+                            </div>
+                        </div>
+                        <div class="settings-bottom-content">
+                            <div class="settings-profile-content">
+                                <div class="settings-profile">
+                                    <div class="settings-profile-singel">
+                                        <div class="settings-profile-img-wrapper"><img
+                                                src=" data:image/jpeg;base64,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"   loading="lazy" alt=""  style="border-radius: 110px;"/></div>
+                                        <div class="settings-profile-name-info">
+                                            <h2 class="settings-profile-name">{{request.user.first_name}}</h2>
+                                            <div class="settings-profile-info">Investment Partenar</div>
+                                        </div>
+                                        <div class="settings-profile-buttons-wrapper"><a href="#"
+                                                class="upload-new-button w-button">Join Date {{request.user.date_joined}}</a><a href="#"
+                                                class="delete-avatar-button w-button">Last Login {{request.user.last_login}}</a></div>
+                                        <p class="settings-paragraph-text">We Wellcome All Our Partner To Join Our Plateform To Earn Money With No Risk It Is Approved By SECP Pakistan</p>
+                                        <div class="settings-socal-icons-wrapper"> </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="settings-content">
+                                <div data-current="Tab 1" data-easing="ease" data-duration-in="300"
+                                    data-duration-out="100" class="settings-tabs-wrapper w-tabs">
+                                    <div class="settings-tab-menu w-tab-menu"><a data-w-tab="Tab 1"
+                                            class="settings-tab-link w-inline-block w-tab-link w--current">
+                                            <div>Profile</div>
+                                        </a><a   class="settings-tab-link w-inline-block " style="text-decoration: none;" href="{% url 'password_reset' %}">
+                                         Change   Password
+                                        </a> </div>
+                                    <div class="settings-tabs-content w-tab-content">
+                                        <div data-w-tab="Tab 1" class="settings-tab-pane w-tab-pane w--tab-active">
+                                            <div class="settings-content-wrapper">
+                                                <div class="settings-form-wrapper">
+                                                    <div class="settings-form-block w-form">
+                                                        <form id="email-form" name="email-form" data-name="Email Form"
+                                                            method="get" class="settings-form">
+                                                            <div class="settings-form-singel-wrappper">
+                                                                <div class="settings-singel"><label for="email"
+                                                                        class="settings-field-label">Phone Number
+                                                                       </label><input type="email"
+                                                                        class="settings-input w-input" maxlength="256"
+                                                                        name="email" data-name="Email"
+                                                                        placeholder="John Doe" id="email" required=""  style="color:white; background-color: gray;" disabled="true"  value=" {{ request.user.username}}" />
+                                                                </div>
+                                                                <div class="settings-singel"><label for="email-2"
+                                                                        class="settings-field-label">Display
+                                                                        Name</label><input type="email" value=" {{ request.user.first_name}}"  style="color:white; background-color: gray;" disabled="true"
+                                                                        class="settings-input w-input" maxlength="256"
+                                                                        name="email-2" data-name="Email 2"
+                                                                        placeholder=" " id="email-2"
+                                                                        required="" /></div>
+                                                            </div>
+                                                            <div class="settings-form-singel-wrappper">
+                                                                <div class="settings-singel"><label for="email-3"
+                                                                        class="settings-field-label">Email
+                                                                        Address</label><input type="email"  style="color:white; background-color: gray;" disabled="true"
+                                                                        class="settings-input w-input" maxlength="256"
+                                                                        name="email-3" data-name="Email 3"
+                                                                        placeholder=" " id="email-3"
+                                                                        required="" value="45745@{{ request.user.email}}" /></div>
+                                                                <div class="settings-singel"><label for="email-2"
+                                                                        class="settings-field-label">User ID: </label><input  style="color:white; background-color: gray;" disabled="true"
+                                                                        type="email" class="settings-input w-input" value="45745@{{ request.user.id}}"
+                                                                        maxlength="256" name="email-2"
+                                                                        data-name="Email 2"
+                                                                        placeholder="Los angeles, california"
+                                                                        id="email-2" required="" /></div>
+                                                            </div>
+                                                           
+                                                            
+                                                                 
+                                                        </form>
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                         
+                    </div>
+                </div>
+            </div>
+            </div>
+</div></div>
+</div></div>
+            
+ {% endblock %}

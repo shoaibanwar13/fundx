@@ -1,0 +1,35 @@
+
+{% extends 'head.html' %}
+{% load static %}
+{% block title %} Profile {% endblock %}
+{% block content %}
+<div class="container mt-4 mb-4 p-3 d-flex justify-content-center"> 
+    <div class="card p-4"> 
+      <div class=" image d-flex flex-column justify-content-center align-items-center"> <img src="{% static 'avatar.png' %}" height="100" width="100" /> 
+        <span class="name mt-3 text-capitalize whiteText">{{request.user.first_name}}</span> 
+        <span class="idd whiteText">User Id: 45745@{{ request.user.id}}</span> 
+        <span class="idd whiteText">User Name: {{ request.user.username }}</span> 
+        <span class="idd whiteText"></span> 
+          
+        <div class="d-flex flex-row justify-content-center align-items-center gap-2"> <span class="idd1 whiteText">http://127.0.0.1:8000/8b6d2/{{ recom_code}}</span> <span><i class="fa fa-copy"></i></span> 
+        </div> <br>
+        <br>
+        <button type="submit" value="Withdrwa" class="btn whiteText" style="background:rgba(104, 104, 104, 0.5); color:#899ba2"><a href=" /updteprofile/" class="whiteText" >Update Profile</a></button>
+        
+        <!-- end profile update -->
+
+        <script type="text/javascript">
+          document.getElementById("payForm").style.display = "none"
+          document.getElementById("payNow").addEventListener("click",function(){
+            if (document.getElementById("payForm").style.display == "none") {
+              document.getElementById("payForm").style.display = "block"
+            }else{
+              document.getElementById("payForm").style.display = "none"
+            }
+          })
+        </script>
+
+      </div>
+</div>
+</main>
+{% endblock %}
