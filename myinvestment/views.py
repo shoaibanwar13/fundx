@@ -5,7 +5,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import get_user_model,get_user
 from .models import Profile,InvestmentPlan,purchased,Withdrawl_Request
 from django.db.models import Sum
-import schedule
+ 
 import time
 from django.contrib.auth.decorators import login_required
 from datetime import datetime, timedelta
